@@ -1,7 +1,7 @@
-import footerImg from "/assets/footer.jpg";
-import tewitterLogo from "/assets/tewitter.svg";
-import instagramLogo from "/assets/instagram.svg";
-import telegramLogo from "/assets/telegram.svg";
+import footerImg from "../../assets/footer.jpg";
+import tewitterLogo from "../../assets/tewitter.svg";
+import instagramLogo from "../../assets/instagram.svg";
+import telegramLogo from "../../assets/telegram.svg";
 import InputFooter from "./InputFooter";
 function Footer() {
   return (

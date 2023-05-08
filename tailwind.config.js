@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+import colors from "tailwindcss/colors";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -11,6 +13,7 @@ export default {
       },
     },
     colors: {
+      ...colors,
       primaryGreen: "#417F56",
       tint: {
         1: "#E5F2E9",

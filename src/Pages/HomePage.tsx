@@ -1,5 +1,7 @@
+import Layout from "../Layout/Layout";
+
 function HomePage() {
-  return <div>HomePage</div>;
+  return <Layout>HomePage</Layout>;
 }
 
 export default HomePage;

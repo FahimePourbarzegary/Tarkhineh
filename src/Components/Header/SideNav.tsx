@@ -12,11 +12,14 @@ type isOpenType = {
   status: boolean;
 }[];
 function SideNav({ isToggle, setIsToggle }: SideNavProps) {
+  //logic:change status when click or leave subnav or submenu
+  //warning: when we want call them with index [id-2] because id start 2 and we want 0 index
+  //so if you have id with 0 or 1 etc. you must to change indexes
   const [isOpen, setIsOpen] = useState<isOpenType>([
     { id: 2, status: false },
     { id: 3, status: false },
   ]);
-  const openSubMenue = (id: number) => {
+  const openSubMenu = (id: number) => {
     const newArr = [...isOpen];
     if (id === isOpen[0].id) {
       newArr[0].status = !newArr[0].status;
@@ -74,7 +77,7 @@ function SideNav({ isToggle, setIsToggle }: SideNavProps) {
                   className={`flex justify-between items-center gap-1 cursor-pointer border-gray-2 ${
                     isOpen[nav.id - 2].status ? "border-b-0" : "border-b-2"
                   } w-full hover:bg-gray-1  hover:text-primaryGreen duration-200`}
-                  onClick={() => openSubMenue(nav.id)}
+                  onClick={() => openSubMenu(nav.id)}
                 >
                   <div className="flex items-center gap-1 py-2 text-sm leading-6">
                     {" "}

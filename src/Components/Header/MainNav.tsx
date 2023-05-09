@@ -26,7 +26,7 @@ function MainNav() {
   };
   return (
     <nav className="hidden lg:flex w-full">
-      <ul className=" flex w-full gap-8 justify-center items-center text-xl text-gray-5 [&>*:first-child]:font-bold  [&>*:first-child]:text-primaryGreen">
+      <ul className=" flex w-full gap-8 justify-center items-center text-md text-gray-5 [&>*:first-child]:font-bold  [&>*:first-child]:text-primaryGreen">
         {NavData.map((data) => {
           if (!data.subNav)
             return (
@@ -66,11 +66,11 @@ function MainNav() {
                     ) : (
                       <ArrowDown2 size={16} />
                     )}
-                    {isOpen[data.id - 2].status && (
+                   
                       <ul
-                        className={` absolute w-36 top-7 duration-300 ${
+                        className={` absolute w-36 top-6 duration-300 ${
                           data.id == 2 ? "left-0.5" : "right-0.5"
-                        } rounded-md shadow  bg-white z-30 `}
+                        } ${isOpen[data.id - 2].status ?"w-36":"w-0 opacity-0"} rounded-md shadow  bg-white z-30 `}
                         onMouseLeave={() => openSubMenu(data.id)}
                       >
                         {data.subNav.map((sub) => {
@@ -83,7 +83,7 @@ function MainNav() {
                           );
                         })}
                       </ul>
-                    )}
+                   
                   </div>
                 </li>
               </>

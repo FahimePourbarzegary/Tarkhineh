@@ -67,7 +67,7 @@ function Header() {
       <div
         className={` absolute top-0 right-0 h-screen  ${
           isToggle ? "w-full" : "w-0"
-        } duration-500 transition-all bg-black/40 backdrop-blur-sm z-10  `}
+        } duration-500 transition-all bg-black/40 backdrop-blur-sm z-20  `}
         onClick={() => navbarToggle()}
       ></div>
       {/* section sidebar mobile */}
@@ -86,16 +86,29 @@ function Header() {
         <div className="text-primaryGreen bg-tint-1 p-1 rounded md:p-2 cursor-pointer  hover:text-white hover:bg-primaryGreen duration-300">
           <ShoppingCart size="16" className="md:w-6 md:h-6" />
         </div>
-        <div className={` ${isOpenSettingUser?"text-white bg-primaryGreen":"text-primaryGreen"} flex  relative justify-center items-center transition-all duration-500  bg-tint-1 p-1 rounded md:p-2  cursor-pointer hover:text-white hover:bg-primaryGreen`} 
-        onClick={()=>{setIsOpenSettingUser(!isOpenSettingUser)}} >
-          <User size="16" className="md:w-6 md:h-6  duration-500 " />
+        <div
+          className={` ${
+            isOpenSettingUser
+              ? "text-white bg-primaryGreen"
+              : "text-primaryGreen"
+          } flex cursor-pointer relative justify-center items-center transition-all duration-500  bg-tint-1 p-1 rounded md:p-2  hover:text-white hover:bg-primaryGreen `}
+          onClick={() => {
+            setIsOpenSettingUser(!isOpenSettingUser);
+          }}
+        >
+          <User size="16" className="md:w-6 md:h-6  duration-500  " />
           <ArrowDown2
             size="14"
             className={`md:w-4 md:h-4 duration-500 ${
               !isOpenSettingUser && "hidden"
             }`}
           />
-          <ul className={` absolute w-36  top-11 left-0.5 z-50 rounded-md shadow  bg-white duration-500 px-1 ${!isOpenSettingUser && "w-0 opacity-0"}`} onMouseLeave={()=>setIsOpenSettingUser(false)}>
+          <ul
+            className={` absolute w-36  top-11 left-0.5 z-50 rounded-md shadow  bg-white duration-500 px-1 ${
+              !isOpenSettingUser && "w-0 opacity-0 hidden"
+            }`}
+            onMouseLeave={() => setIsOpenSettingUser(false)}
+          >
             {settingUserData.map((data) => {
               return (
                 <li className="flex gap-2 font-normal text-xs text-gray-8 p-2 border-b-2 border-b-gray-1 cursor-pointer hover:text-primaryGreen hover:bg-gray-1 duration-300">

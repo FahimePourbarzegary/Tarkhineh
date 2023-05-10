@@ -70,7 +70,7 @@ function MainNav() {
                       <ul
                         className={` absolute w-36 top-6 duration-300 ${
                           data.id == 2 ? "left-0.5" : "right-0.5"
-                        } ${isOpen[data.id - 2].status ?"w-36":"w-0 opacity-0"} rounded-md shadow  bg-white z-30 `}
+                        } ${isOpen[data.id - 2].status ?"w-36":"w-0 opacity-0 hidden"} rounded-md shadow  bg-white z-30 `}
                         onMouseLeave={() => openSubMenu(data.id)}
                       >
                         {data.subNav.map((sub) => {

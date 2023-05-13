@@ -3,6 +3,7 @@ import Category from "../Components/Category/Category";
 import Slider from "../Components/Slider/Slider";
 import Layout from "../Layout/Layout";
 import "swiper/swiper-bundle.min.css";
+import BranchCard from "../Components/BranchCard/BranchCard";
 function HomePage() {
   return (
     <Layout>
@@ -64,6 +65,8 @@ function HomePage() {
           </div>
         </div>
       </section>
+      {/* branchCards section */}
+      <BranchCard />
     </Layout>
   );
 }

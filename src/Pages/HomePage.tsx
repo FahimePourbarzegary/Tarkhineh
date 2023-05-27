@@ -4,6 +4,7 @@ import Slider from "../Components/Slider/Slider";
 import Layout from "../Layout/Layout";
 import "swiper/swiper-bundle.min.css";
 import BranchCard from "../Components/BranchCard/BranchCard";
+import aboutImage from "../assets/branches/chalose.png";
 function HomePage() {
   return (
     <Layout>
@@ -15,12 +16,12 @@ function HomePage() {
       "
       >
         <div
-          className=" h-96 -z-10 w-full bg-fixed bg-cover bg-no-repeat bg-center opacity-40 blur-sm"
+          className={`h-96 w-full bg-fixed bg-cover bg-no-repeat bg-center opacity-40 blur-sm `}
           style={{
-            backgroundImage: `url("https://s3-alpha-sig.figma.com/img/1e09/aa62/e62547070cd21866a3a7fb65f0c09ed4?Expires=1684713600&Signature=MsKIIoiYFhEH8OcbA5oLOHJFyDWwfwnUhe-0QqfE6l1e40ptvgj7fpzHoMJ3vsHU3RSWrpyv1Rh91KxYXDzU~p5aESerBevLO8L9S9j6FJF6RnrwD4S1g3AZGvazfNWjulUC1O7o-wgZ9G3nHCEzWurFvcz58Ufdm54Yb7LQwrjlrsMcVe066ZA9ANI18vURYRMUYeVl9ytD6NQI5eBLXpPnnJ~i3FN7GFObo4pyVeE8hTYeVV95vN9EKGhBAn6cyTNTO9xfB7ddC8Iib3QfJwNWYPr0hT0o~QAo5XjcwSE2WBI1ToLvuHjrD2E~xQi3He1DU~bgARWIJt-BvDbpmQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4")`,
+            backgroundImage: `url(${aboutImage})`,
           }}
         ></div>
-        <div className=" absolute z-30 top-0 px-5 py-4 text-white text-justify w-full grid gap-6 lg:grid-cols-2 lg:py-10 lg:px-28 ">
+        <div className=" absolute z-10 top-0 px-5 py-4 text-white text-justify w-full grid gap-6 lg:grid-cols-2 lg:py-10 lg:px-28 ">
           <div className=" grid gap-2 lg:gap-6">
             <h2 className="lg:font-bold lg:text-2xl">
               فروشگاه های زنجیره ای ترخینه

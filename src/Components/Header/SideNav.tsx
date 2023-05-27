@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import NavData from "./NavData";
 import { Link } from "react-router-dom";
 import logoSidebar from "../../assets/LogoSidebar.svg";
+import picSideNav from "../../assets/sidebar.jpg";
 type SideNavProps = {
   isToggle: boolean;
   setIsToggle: React.Dispatch<React.SetStateAction<boolean>>;
@@ -33,14 +34,14 @@ function SideNav({ isToggle, setIsToggle }: SideNavProps) {
     <div
       className={`${
         isToggle ? "w-3/4 " : "w-0 [&>*]:hidden"
-      } duration-500  ease-linear h-screen bg-white z-20 absolute top-0 right-0`}
+      } duration-500  ease-linear h-screen bg-white z-20  top-0 right-0 fixed  overflow-y-auto`}
     >
       {/* Head */}
       <div className=" bg-gray-8 relative ">
         <div
           className=" h-32 opacity-50  w-full  bg-center  bg-no-repeat bg-cover   "
           style={{
-            backgroundImage: `url("https://s3-alpha-sig.figma.com/img/1793/6674/832c8a64b2c34d3480247217b7544394?Expires=1684713600&Signature=KZbgInf-cgSYey46B-aVjU-BRx2gws~YO4HMzIS9AJVjMJ3hPch~cNz~f1PKzKRuLt6lJ3IAdP0vtTF6Mxx8omAAJa0emzkKYzeKO4jlSSC3M9nxlXCSeaxRS8vWV7DoSDSsV-v363YUJ2GnaxLcfLGIpewg28BowPXw0bomkj~6C1Lg677iLlaNxLegeN6mrBh5y3dQ8hisLmghZ0BiJKuM6ZPNWqA~lDFV8B2woFn2OkbbOzEJDuCIlhnGh1fV-Wp2EmDJcQssk-PBvzD1mC5sCRzvnz9SC5jDmrhlY8Z7MreHIXLCTKK~6Ohfv3LLG9kyMG6n-goLbCpfIAvYyA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4")`,
+            backgroundImage: `url("${picSideNav}")`,
           }}
         ></div>
         <img

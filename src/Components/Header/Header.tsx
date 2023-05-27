@@ -65,7 +65,7 @@ function Header() {
       </div>
       {/* section toggle navbar*/}
       <div
-        className={` absolute top-0 right-0 h-screen  ${
+        className={` fixed top-0 right-0 h-screen  ${
           isToggle ? "w-full" : "w-0"
         } duration-500 transition-all bg-black/40 backdrop-blur-sm z-20  `}
         onClick={() => navbarToggle()}
@@ -91,20 +91,20 @@ function Header() {
             isOpenSettingUser
               ? "text-white bg-primaryGreen"
               : "text-primaryGreen"
-          } flex cursor-pointer relative justify-center items-center transition-all duration-500  bg-tint-1 p-1 rounded md:p-2  hover:text-white hover:bg-primaryGreen `}
+          } flex cursor-pointer relative justify-center items-center transition-all duration-300  bg-tint-1 p-1 rounded md:p-2  hover:text-white hover:bg-primaryGreen `}
           onClick={() => {
             setIsOpenSettingUser(!isOpenSettingUser);
           }}
         >
-          <User size="16" className="md:w-6 md:h-6  duration-500  " />
+          <User size="16" className="md:w-6 md:h-6  duration-300  " />
           <ArrowDown2
             size="14"
-            className={`md:w-4 md:h-4 duration-500 ${
+            className={`md:w-4 md:h-4 duration-300 ${
               !isOpenSettingUser && "hidden"
             }`}
           />
           <ul
-            className={` absolute w-36  top-11 left-0.5 z-50 rounded-md shadow  bg-white duration-500 px-1 ${
+            className={` absolute w-36  top-11 left-0.5 z-50 rounded-md shadow  bg-white duration-300 px-1 ${
               !isOpenSettingUser && "w-0 opacity-0 hidden"
             }`}
             onMouseLeave={() => setIsOpenSettingUser(false)}

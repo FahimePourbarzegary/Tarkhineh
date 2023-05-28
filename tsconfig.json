@@ -20,5 +20,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "typeRoots": ["./typings", "./node_modules/@types/"],
+  "noImplicitAny": false
 }

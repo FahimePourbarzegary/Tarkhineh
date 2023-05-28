@@ -40,6 +40,7 @@ function PopUpPicture({
                     index === i && "border border-white "
                   } cursor-pointer lg:w-[80px] lg:h-[80px]`}
                   onClick={() => setIsPopUpPicture(i)}
+                  key={i}
                 >
                   <img
                     src={data.imageUrl}

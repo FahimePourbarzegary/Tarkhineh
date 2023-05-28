@@ -53,6 +53,7 @@ function Header() {
   const navbarToggle = () => {
     setIsToggle(!isToggle);
   };
+
   return (
     <header className="w-full h-16 flex items-center justify-between p-5 md:px-10 md:py-11">
       <div className="w-6 h-6 flex justify-center items-center  lg:hidden">
@@ -95,6 +96,7 @@ function Header() {
           onClick={() => {
             setIsOpenSettingUser(!isOpenSettingUser);
           }}
+          onMouseLeave={() => setIsOpenSettingUser(false)}
         >
           <User size="16" className="md:w-6 md:h-6  duration-300  " />
           <ArrowDown2
@@ -104,14 +106,17 @@ function Header() {
             }`}
           />
           <ul
-            className={` absolute w-36  top-11 left-0.5 z-50 rounded-md shadow  bg-white duration-300 px-1 ${
+            className={` absolute w-36  top-6 left-0.5 z-50 rounded-md shadow md:top-10 bg-white duration-300 px-1 ${
               !isOpenSettingUser && "w-0 opacity-0 hidden"
             }`}
             onMouseLeave={() => setIsOpenSettingUser(false)}
           >
             {settingUserData.map((data) => {
               return (
-                <li className="flex gap-2 font-normal text-xs text-gray-8 p-2 border-b-2 border-b-gray-1 cursor-pointer hover:text-primaryGreen hover:bg-gray-1 duration-300">
+                <li
+                  key={data.id}
+                  className="flex gap-2 font-normal text-xs text-gray-8 p-2 border-b-2 border-b-gray-1 cursor-pointer hover:text-primaryGreen hover:bg-gray-1 duration-300"
+                >
                   {data.icon}
                   <Link to={"/"} className="">
                     {data.title}

@@ -30,7 +30,7 @@ function MainNav() {
         {NavData.map((data) => {
           if (!data.subNav)
             return (
-              <li>
+              <li key={data.id}>
                 <NavLink
                   to={data.mainRoute}
                   className={`${
@@ -66,24 +66,30 @@ function MainNav() {
                     ) : (
                       <ArrowDown2 size={16} />
                     )}
-                   
-                      <ul
-                        className={` absolute w-36 top-6 duration-300 ${
-                          data.id == 2 ? "left-0.5" : "right-0.5"
-                        } ${isOpen[data.id - 2].status ?"w-36":"w-0 opacity-0 hidden"} rounded-md shadow  bg-white z-30 `}
-                        onMouseLeave={() => openSubMenu(data.id)}
-                      >
-                        {data.subNav.map((sub) => {
-                          return (
-                            <li className=" font-normal text-sm text-gray-8 p-2 border-b-2 border-b-gray-1 cursor-pointer hover:text-primaryGreen hover:bg-gray-1 duration-300">
-                              <Link to={sub.subRoute} className="">
-                                {sub.title}
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                   
+
+                    <ul
+                      className={` absolute w-36 top-6 duration-300 ${
+                        data.id == 2 ? "left-0.5" : "right-0.5"
+                      } ${
+                        isOpen[data.id - 2].status
+                          ? "w-36"
+                          : "w-0 opacity-0 hidden"
+                      } rounded-md shadow  bg-white z-30 `}
+                      onMouseLeave={() => openSubMenu(data.id)}
+                    >
+                      {data.subNav.map((sub, index) => {
+                        return (
+                          <li
+                            key={index}
+                            className=" font-normal text-sm text-gray-8 p-2 border-b-2 border-b-gray-1 cursor-pointer hover:text-primaryGreen hover:bg-gray-1 duration-300"
+                          >
+                            <Link to={sub.subRoute} className="">
+                              {sub.title}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                 </li>
               </>

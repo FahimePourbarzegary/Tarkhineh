@@ -36,8 +36,6 @@ function Slider() {
           },
         }}
         loop
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
         className="h-48 md:h-96 slider relative"
       >
         <SwiperSlide>

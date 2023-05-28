@@ -8,8 +8,11 @@ function Category() {
       <div className=" grid grid-cols-2  justify-center items-center gap-20  px-20  py-16 md:gap-40 md:px-24 md:py-32 xl:grid-cols-4">
         {CategoryData.map((data) => {
           return (
-            <div className="relative flex flex-col justify-center items-center hover:scale-105 duration-300">
-              <div className=" h-20 w-40 rounded border border-primaryGreen md:w-72 md:h-[180px]"></div>
+            <div
+              className="relative flex flex-col justify-center items-center hover:scale-105 duration-300"
+              key={data.title}
+            >
+              <div className=" h-20 w-32 rounded border border-primaryGreen md:w-72 md:h-[180px]"></div>
               <div className=" absolute w-[110px] h-auto -top-14 md:w-60 md:-top-32 ">
                 <img src={data.imgUrl} alt={data.title} />
               </div>

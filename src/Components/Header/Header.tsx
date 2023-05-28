@@ -15,7 +15,10 @@ import SideNav from "./SideNav";
 import MainNav from "./MainNav";
 import { Link } from "react-router-dom";
 
+import { useContext } from "react";
+import { IsSearchContext } from "../../Layout/Layout";
 function Header() {
+  const { isSearchPopup, setIsSearchPopup } = useContext(IsSearchContext);
   const [isToggle, setIsToggle] = useState(false);
   const [isOpenSettingUser, setIsOpenSettingUser] = useState(false);
   const settingUserData = [
@@ -81,7 +84,13 @@ function Header() {
       <MainNav />
       {/* section user action */}
       <div className=" flex gap-1 justify-evenly items-center  ">
-        <div className=" hidden text-primaryGreen bg-tint-1 p-1 rounded md:p-2  md:block cursor-pointer  hover:text-white hover:bg-primaryGreen duration-300">
+        <div
+          className=" hidden text-primaryGreen bg-tint-1 p-1 rounded md:p-2  md:block cursor-pointer  hover:text-white hover:bg-primaryGreen duration-300"
+          onClick={() => {
+            setIsSearchPopup(!isSearchPopup);
+            console.log(isSearchPopup);
+          }}
+        >
           <SearchNormal1 size="16" className="md:w-6 md:h-6" />
         </div>
         <div className="text-primaryGreen bg-tint-1 p-1 rounded md:p-2 cursor-pointer  hover:text-white hover:bg-primaryGreen duration-300">

@@ -1,7 +1,7 @@
 import CategoryData from "./CategoryData";
 function Category() {
   return (
-    <section className=" flex flex-col justify-center items-center mt-16 ">
+    <section className=" flex flex-col justify-center items-center mt-8 ">
       <h1 className=" font-estedadSemiBold md:text-2xl text-gray-8 ">
         منوی رستوران
       </h1>

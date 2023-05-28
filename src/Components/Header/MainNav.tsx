@@ -22,7 +22,6 @@ function MainNav() {
       newArr[1].status = !newArr[1].status;
     }
     setIsOpen(newArr);
-    console.log(isOpen);
   };
   return (
     <nav className="hidden lg:flex w-full">

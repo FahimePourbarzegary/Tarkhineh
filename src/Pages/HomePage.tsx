@@ -1,10 +1,8 @@
 import {
   ArrowLeft2,
-  CloseCircle,
   Diagram,
   HomeWifi,
   MenuBoard,
-  SearchNormal1,
   User,
 } from "iconsax-react";
 import Category from "../Components/Category/Category";
@@ -12,67 +10,10 @@ import Slider from "../Components/Slider/Slider";
 import "swiper/swiper-bundle.min.css";
 import BranchCard from "../Components/BranchCard/BranchCard";
 import aboutImage from "../assets/branches/chalose.png";
-import { IsSearchContext } from "../Layout/Layout";
-import { useContext } from "react";
 function HomePage() {
-  const { isSearchPopup, setIsSearchPopup } = useContext(IsSearchContext);
   return (
     <>
       <Slider />
-      {/* Searchbar section */}
-      <section className="w-full px-5 relative  ">
-        {/* in desktop style  */}
-        {isSearchPopup && (
-          <>
-            {" "}
-            <div
-              className="fixed w-screen h-screen top-0 left-0 bg-black/75   backdrop-blur-sm  z-30 "
-              onClick={() => {
-                setIsSearchPopup(false);
-              }}
-            ></div>
-            <div
-              className={`fixed w-screen h-screen top-0 left-0   z-30 flex justify-center items-center`}
-            >
-              <div className=" md:w-[600px] md:h-[253px] bg-white rounded-lg z-40">
-                <div className=" w-full flex items-center justify-between p-6 bg-gray-3 rounded-t-lg">
-                  <h2 className=" w-full text-center font-semibold text-xl text-gray-8">
-                    جستجو
-                  </h2>
-                  <CloseCircle
-                    className=" text-gray-7 cursor-pointer"
-                    onClick={() => {
-                      setIsSearchPopup(false);
-                    }}
-                  />
-                </div>
-                <div className=" w-full px-24 pt-8">
-                  <h2 className=" text-gray-8 text-center">
-                    لطفا متن خود را تایپ و سپس دکمه Enter را بزنید.
-                  </h2>
-                  <div className=" text-gray-8  w-full flex py-3 px-4 items-center justify-between border border-gray-4 rounded-xl my-4  ">
-                    <input
-                      type="text"
-                      placeholder="جستجو"
-                      className="w-full outline-none"
-                    />
-                    <SearchNormal1 className=" " />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-        {/* in mobile style  */}
-        <div className=" text-gray-8  w-full flex py-3 px-4 items-center justify-between border border-gray-4 rounded my-4 md:hidden  ">
-          <input
-            type="text"
-            placeholder="جستجو"
-            className="w-full outline-none"
-          />
-          <SearchNormal1 className=" " />
-        </div>
-      </section>
       <Category />
       {/* about us section */}
       <section

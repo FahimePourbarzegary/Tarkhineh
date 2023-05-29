@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 
 import { useContext } from "react";
 import { IsSearchContext } from "../../Layout/Layout";
+import SearchPopup from "../SearchPopup/SearchPopup";
 function Header() {
   const { isSearchPopup, setIsSearchPopup } = useContext(IsSearchContext);
   const [isToggle, setIsToggle] = useState(false);
@@ -136,6 +137,8 @@ function Header() {
           </ul>
         </div>
       </div>
+      {/* in desktop style  */}
+      {isSearchPopup && <SearchPopup />}
     </header>
   );
 }

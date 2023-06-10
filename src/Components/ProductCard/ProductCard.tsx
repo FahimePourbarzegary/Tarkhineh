@@ -2,7 +2,7 @@ import { Heart } from "iconsax-react";
 import image from "../../assets/food.jpg";
 function ProductCard() {
   return (
-    <div className="  w-64 md:w-72 bg-white border border-gray-2 rounded-lg overflow-hidden">
+    <div className=" w-44 md:w-72 bg-white border border-gray-2 rounded-lg overflow-hidden product-card">
       <img
         src={image}
         alt="image"

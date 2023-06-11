@@ -50,7 +50,7 @@ function CategorySlider({ navigation }: CategorySliderProps) {
             spaceBetween: 0,
           },
           1200: {
-            slidesPerView: 4.3,
+            slidesPerView: 4.5,
             spaceBetween: 0,
           },
           1440: {

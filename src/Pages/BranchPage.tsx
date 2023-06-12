@@ -18,10 +18,16 @@ import "swiper/css/scrollbar";
 import "swiper/swiper-bundle.min.css";
 
 import CommentSlider from "../Components/CommentSlider.tsx/CommentSlider";
+import InputSearch from "../Components/InputSearch/InputSearch";
 function BranchPage() {
   return (
     <section>
       <Slider />
+      {/* in mobile style  */}
+      <div className="w-full px-5 relative md:hidden  ">
+        {" "}
+        <InputSearch />
+      </div>
       {/* recommand food to user */}
       <section className=" py-12 relative">
         <div className=" w-full pb-10 mb-2">

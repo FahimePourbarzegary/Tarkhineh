@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/swiper-bundle.min.css";
-import { ArrowLeft2, ArrowRight2, SearchNormal1 } from "iconsax-react";
+import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
 function Slider() {
   return (
     <div className="relative">
@@ -108,18 +108,6 @@ swiper-pagination-fraction"
           ></div>
         </div>
       </Swiper>
-      {/* in mobile style  */}
-      <div className="w-full px-5 relative  ">
-        {" "}
-        <div className=" text-gray-8  w-full flex py-3 px-4 items-center justify-between border border-gray-4 rounded my-4 md:hidden  ">
-          <input
-            type="text"
-            placeholder="جستجو"
-            className="w-full outline-none"
-          />
-          <SearchNormal1 className=" " />
-        </div>
-      </div>
     </div>
   );
 }

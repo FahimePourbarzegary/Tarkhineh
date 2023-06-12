@@ -1,19 +1,18 @@
-import {
-  ArrowLeft2,
-  Diagram,
-  HomeWifi,
-  MenuBoard,
-  User,
-} from "iconsax-react";
+import { ArrowLeft2, Diagram, HomeWifi, MenuBoard, User } from "iconsax-react";
 import Category from "../Components/Category/Category";
 import Slider from "../Components/Slider/Slider";
 import "swiper/swiper-bundle.min.css";
 import BranchCard from "../Components/BranchCard/BranchCard";
 import aboutImage from "../assets/branches/chalose.png";
+import InputSearch from "../Components/InputSearch/InputSearch";
 function HomePage() {
   return (
     <>
       <Slider />
+      {/* in mobile style  */}
+      <div className="w-full px-5 relative md:hidden  ">
+        <InputSearch />
+      </div>
       <Category />
       {/* about us section */}
       <section

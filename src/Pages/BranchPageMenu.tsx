@@ -105,7 +105,7 @@ ${isFirst && "md:hidden"} `}
           <InputSearch ExtraCssDiv="h-10 rounded-lg mb-0" />
         </div>
       </div>
-      {/* Menu section */}
+      {/* Menu section-irani */}
       <section className="px-5 md:px-24">
         <div className="h-auto mt-4  ">
           <div className=" flex justify-between items-center mb-3">
@@ -136,7 +136,7 @@ ${isFirst && "md:hidden"} `}
           </div>
         </div>
       </section>
-      {/* Menu section */}
+      {/* Menu section-nonirani */}
       <section className="px-5 md:px-24">
         <div className="h-auto mt-4  ">
           <div className=" flex justify-between items-center mb-3">
@@ -154,7 +154,7 @@ ${isFirst && "md:hidden"} `}
           </div>
         </div>
       </section>
-      {/* Menu section */}
+      {/* Menu section-pizaa*/}
       <section className="px-5 md:px-24">
         <div className="h-auto mt-4  ">
           <div className=" flex justify-between items-center mb-3">
@@ -172,8 +172,8 @@ ${isFirst && "md:hidden"} `}
           </div>
         </div>
       </section>
-      {/* Menu section */}
-      <section className="px-5 md:px-24">
+      {/* Menu section-sandwich */}
+      <section className="px-5 md:px-24 mb-6 xl:mb-12">
         <div className="h-auto mt-4  ">
           <div className=" flex justify-between items-center mb-3">
             <h1 className=" font-bold w-full xl:text-2xl text-gray-8 xl:mb-6">

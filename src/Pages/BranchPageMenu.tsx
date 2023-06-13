@@ -4,8 +4,10 @@ import { Swiper } from "swiper/react";
 import { SwiperSlide } from "swiper/react";
 import InputSearch from "../Components/InputSearch/InputSearch";
 import { Navigation, A11y } from "swiper";
-import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
+import { ArrowLeft2, ArrowRight2, ShoppingCart } from "iconsax-react";
 import { useState } from "react";
+import ProductCardMenu from "../Components/ProductCardMenu/ProductCardMenu";
+
 function BranchPageMenu() {
   const [slideBegOrNot, handleSlideByState] = useState({
     isFirst: true,
@@ -66,7 +68,7 @@ function BranchPageMenu() {
             },
           }}
           onSlideChange={onSlideChangeHandler}
-          className=" w-full max-w-fit  md:px-24 px-8 mr-0 h-full  md:mt-4 branch-menu-category"
+          className=" w-full max-w-fit xl:px-28  md:px-24 px-8 mr-0 h-full  md:mt-4 branch-menu-category"
         >
           <SwiperSlide className=" text-[10px] lg:text-base bg-gray-3 px-2 py-1 rounded-full max-w-fit text-center">
             <div>غذاهای ایرانی</div>
@@ -99,10 +101,95 @@ ${isFirst && "md:hidden"} `}
             <ArrowLeft2 size={16} className=" " />
           </div>
         </Swiper>
-        <div className="w-full  px-5  relative">
-          <InputSearch ExtraCssDiv="h-9 rounded-lg" />
+        <div className="w-full  px-5 md:pl-24  relative">
+          <InputSearch ExtraCssDiv="h-10 rounded-lg mb-0" />
         </div>
       </div>
+      {/* Menu section */}
+      <section className="px-5 md:px-24">
+        <div className="h-auto mt-4  ">
+          <div className=" flex justify-between items-center mb-3">
+            <h1 className=" font-bold w-full xl:text-2xl text-gray-8 xl:mb-6">
+              غذاهای ایرانی
+            </h1>
+            <div className=" w-full flex justify-end items-center">
+              {" "}
+              <button className=" relative flex justify-between items-center gap-2 text-primaryGreen border  border-primaryGreen py-1 px-2 md:px-4 md:py-[5.5px] rounded group overflow-hidden ">
+                <span className="w-full h-full translate-x-96 rounded-xs bg-primaryGreen inset-0 absolute -z-[1] group-hover:translate-x-0 duration-500"></span>
+                <ShoppingCart
+                  size={16}
+                  className=" md:w-6 md:h-6 group-hover:text-white  duration-500 "
+                />
+                <p className="group-hover:text-white  duration-500 text-xs md:text-base ">
+                  تکمیل خرید
+                </p>
+              </button>
+            </div>
+          </div>
+          {/* product card */}
+          <div className="grid gap-3 mb-3 lg:grid-cols-2">
+            <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu />
+          </div>
+        </div>
+      </section>
+      {/* Menu section */}
+      <section className="px-5 md:px-24">
+        <div className="h-auto mt-4  ">
+          <div className=" flex justify-between items-center mb-3">
+            <h1 className=" font-bold w-full xl:text-2xl text-gray-8 xl:mb-6">
+              غذاهای غیر ایرانی
+            </h1>
+          </div>
+          {/* product card */}
+          <div className="grid gap-3 mb-3 lg:grid-cols-2">
+            <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu />
+          </div>
+        </div>
+      </section>
+      {/* Menu section */}
+      <section className="px-5 md:px-24">
+        <div className="h-auto mt-4  ">
+          <div className=" flex justify-between items-center mb-3">
+            <h1 className=" font-bold w-full xl:text-2xl text-gray-8 xl:mb-6">
+              پیتزاها
+            </h1>
+          </div>
+          {/* product card */}
+          <div className="grid gap-3 mb-3 lg:grid-cols-2">
+            <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu />
+          </div>
+        </div>
+      </section>
+      {/* Menu section */}
+      <section className="px-5 md:px-24">
+        <div className="h-auto mt-4  ">
+          <div className=" flex justify-between items-center mb-3">
+            <h1 className=" font-bold w-full xl:text-2xl text-gray-8 xl:mb-6">
+              ساندویچ ها
+            </h1>
+          </div>
+          {/* product card */}
+          <div className="grid gap-3 mb-3 lg:grid-cols-2">
+            <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu /> <ProductCardMenu />
+            <ProductCardMenu />
+          </div>
+        </div>
+      </section>
     </section>
   );
 }

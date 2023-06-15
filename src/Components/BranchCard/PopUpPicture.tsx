@@ -36,7 +36,7 @@ function PopUpPicture({
             {BranchCardData.map((data, i) => {
               return (
                 <div
-                  className={`w-[60px] h-[60px] rounded-lg ${
+                  className={`w-[60px] h-[60px] overflow-hidden rounded-lg ${
                     index === i && "border border-white "
                   } cursor-pointer lg:w-[80px] lg:h-[80px]`}
                   onClick={() => setIsPopUpPicture(i)}

@@ -7,6 +7,7 @@ import { Navigation, A11y } from "swiper";
 import { ArrowLeft2, ArrowRight2, ShoppingCart } from "iconsax-react";
 import { useState } from "react";
 import ProductCardMenu from "../Components/ProductCardMenu/ProductCardMenu";
+import InfoPopupProduct from "../Components/InfoPopupProduct/InfoPopupProduct";
 
 function BranchPageMenu() {
   const [slideBegOrNot, handleSlideByState] = useState({
@@ -21,9 +22,14 @@ function BranchPageMenu() {
     console.log(swiper);
   };
   const { isFirst, isLast } = slideBegOrNot;
+  //toOpenPopUpInfoFood
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section>
       <Slider />
+      {/*Popup info product */}
+      {isOpen && <InfoPopupProduct />}
       {/* nav */}
       <div className=" bg-gray-3 w-full  px-5  md:px-28 ">
         <nav className=" flex gap-4 md:gap-8">
@@ -128,11 +134,14 @@ ${isFirst && "md:hidden"} `}
           </div>
           {/* product card */}
           <div className="grid gap-3 mb-3 lg:grid-cols-2">
-            <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
           </div>
         </div>
       </section>
@@ -146,11 +155,14 @@ ${isFirst && "md:hidden"} `}
           </div>
           {/* product card */}
           <div className="grid gap-3 mb-3 lg:grid-cols-2">
-            <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
           </div>
         </div>
       </section>
@@ -164,11 +176,14 @@ ${isFirst && "md:hidden"} `}
           </div>
           {/* product card */}
           <div className="grid gap-3 mb-3 lg:grid-cols-2">
-            <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
           </div>
         </div>
       </section>
@@ -182,11 +197,14 @@ ${isFirst && "md:hidden"} `}
           </div>
           {/* product card */}
           <div className="grid gap-3 mb-3 lg:grid-cols-2">
-            <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu /> <ProductCardMenu />
-            <ProductCardMenu />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
+            <ProductCardMenu isOpenInfo={isOpen} setIsOpenInfo={setIsOpen} />
           </div>
         </div>
       </section>

@@ -1,10 +1,17 @@
 import { Heart } from "iconsax-react";
 import imgproduct from "../../assets/food.jpg";
-function ProductCardMenu() {
+type ProductCardMenuProps = {
+  isOpenInfo: boolean;
+  setIsOpenInfo: (situation: boolean) => void;
+};
+function ProductCardMenu({ isOpenInfo, setIsOpenInfo }: ProductCardMenuProps) {
   return (
-    <div className=" bg-white  border border-gray-4 rounded overflow-hidden flex xl:rounded-lg ">
+    <div
+      className=" bg-white  border border-gray-4 rounded overflow-hidden flex xl:rounded-lg cursor-pointer "
+      onClick={() => setIsOpenInfo(!isOpenInfo)}
+    >
       {/*image*/}
-      <div className="h-full w-24 xl:w-44">
+      <div className="h-full w-24 xl:w-44 hover:opacity-50 duration-200">
         <img
           src={imgproduct}
           alt="تصویر غذا"
@@ -31,7 +38,7 @@ function ProductCardMenu() {
               <span className=" line-through text-gray-5 xl:text-base">
                 ۱۸۰،۰۰۰
               </span>
-              <span className=" bg-error-extralight text-error rounded-lg px-1 xl:text-xs">
+              <span className=" bg-error-extralight text-error rounded-lg px-1 xl:text-xs flex justify-center items-center">
                 ۳۵٪
               </span>
             </div>
@@ -59,7 +66,7 @@ function ProductCardMenu() {
 }
 
 export default ProductCardMenu;
-const StarStyle = () => {
+export const StarStyle = () => {
   return (
     <div
       id="maskDiv"

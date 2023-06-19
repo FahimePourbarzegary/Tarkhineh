@@ -29,7 +29,7 @@ function BranchPageMenu() {
     <section>
       <Slider />
       {/*Popup info product */}
-      {isOpen && <InfoPopupProduct />}
+      {isOpen && <InfoPopupProduct setIsOpenInfo={setIsOpen} />}
       {/* nav */}
       <div className=" bg-gray-3 w-full  px-5  md:px-28 ">
         <nav className=" flex gap-4 md:gap-8">

@@ -18,7 +18,11 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { IsSearchContext } from "../../Layout/Layout";
 import SearchPopup from "../SearchPopup/SearchPopup";
+import Login from "../Login/Login";
 function Header() {
+  //isLogin just static value for testing open loginuser
+  const isLogin = false;
+  const [isShowLoginModal, setIsShowLoginModal] = useState(false);
   const { isSearchPopup, setIsSearchPopup } = useContext(IsSearchContext);
   const [isToggle, setIsToggle] = useState(false);
   const [isOpenSettingUser, setIsOpenSettingUser] = useState(false);
@@ -103,42 +107,53 @@ function Header() {
               ? "text-white bg-primaryGreen"
               : "text-primaryGreen"
           } flex cursor-pointer relative justify-center items-center transition-all duration-300  bg-tint-1 p-1 rounded md:p-2  hover:text-white hover:bg-primaryGreen `}
-          onClick={() => {
+          onPointerDown={() => {
             setIsOpenSettingUser(!isOpenSettingUser);
           }}
           onMouseLeave={() => setIsOpenSettingUser(false)}
+          onClick={() => {
+            if (!isLogin) {
+              setIsShowLoginModal(true);
+            }
+          }}
         >
           <User size="16" className="md:w-6 md:h-6  duration-300  " />
-          <ArrowDown2
-            size="14"
-            className={`md:w-4 md:h-4 duration-300 ${
-              !isOpenSettingUser && "hidden"
-            }`}
-          />
-          <ul
-            className={` absolute w-36  top-6 left-0.5 z-50 rounded-md shadow md:top-10 bg-white duration-300 px-1 ${
-              !isOpenSettingUser && "w-0 opacity-0 hidden"
-            }`}
-            onMouseLeave={() => setIsOpenSettingUser(false)}
-          >
-            {settingUserData.map((data) => {
-              return (
-                <li
-                  key={data.id}
-                  className="flex gap-2 font-normal text-xs text-gray-8 p-2 border-b-2 border-b-gray-1 cursor-pointer hover:text-primaryGreen hover:bg-gray-1 duration-300"
-                >
-                  {data.icon}
-                  <Link to={"/"} className="">
-                    {data.title}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          {isLogin && (
+            <ArrowDown2
+              size="14"
+              className={`md:w-4 md:h-4 duration-300 ${
+                !isOpenSettingUser && "hidden"
+              }`}
+            />
+          )}
+          {isLogin && (
+            <ul
+              className={` absolute w-36  top-6 left-0.5 z-50 rounded-md shadow md:top-10 bg-white duration-300 px-1 ${
+                !isOpenSettingUser && "w-0 opacity-0 hidden"
+              }`}
+              onMouseLeave={() => setIsOpenSettingUser(false)}
+            >
+              {settingUserData.map((data) => {
+                return (
+                  <li
+                    key={data.id}
+                    className="flex gap-2 font-normal text-xs text-gray-8 p-2 border-b-2 border-b-gray-1 cursor-pointer hover:text-primaryGreen hover:bg-gray-1 duration-300"
+                  >
+                    {data.icon}
+                    <Link to={"/"} className="">
+                      {data.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
       </div>
       {/* in desktop style  */}
       {isSearchPopup && <SearchPopup />}
+      {/* */}
+      {isShowLoginModal && <Login setIsShowLoginModal={setIsShowLoginModal} />}
     </header>
   );
 }

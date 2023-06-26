@@ -5,6 +5,7 @@ import SearchPage from "./Pages/SearchPage";
 import BranchPage from "./Pages/BranchPage";
 import BranchPageMenu from "./Pages/BranchPageMenu";
 import AboutUsPage from "./Pages/AboutUsPage";
+import ContactUsPage from "./Pages/ContactUsPage";
 function App() {
   return (
     <Layout>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/branch" element={<BranchPage />} />
         <Route path="/branch-menu" element={<BranchPageMenu />} />
         <Route path="/aboutus" element={<AboutUsPage />} />
+        <Route path="/contactus" element={<ContactUsPage />} />
       </Routes>
     </Layout>
   );

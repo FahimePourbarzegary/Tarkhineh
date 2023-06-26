@@ -187,10 +187,10 @@ const ReceiveCode = ({ phoneNumber, isReceiveCode, setIsReceiveCode }) => {
               type="text"
               ref={activeOtpIndex === index ? inputRef : null}
               maxLength={1}
-              className={`w-full px-4 py-3 border border-gray-5 rounded   text-center [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
+              className={`w-full px-4 py-3  rounded   text-center [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
                 error.length
-                  ? "border  border-error focus:outline-error"
-                  : " focus:outline-primaryGreen"
+                  ? " border-2 border-error focus:outline-error"
+                  : " focus:outline-primaryGreen border border-gray-5"
               } `}
               key={index}
               pattern="\d*"

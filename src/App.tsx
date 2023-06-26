@@ -4,6 +4,7 @@ import Layout from "./Layout/Layout";
 import SearchPage from "./Pages/SearchPage";
 import BranchPage from "./Pages/BranchPage";
 import BranchPageMenu from "./Pages/BranchPageMenu";
+import AboutUsPage from "./Pages/AboutUsPage";
 function App() {
   return (
     <Layout>
@@ -13,6 +14,7 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/branch" element={<BranchPage />} />
         <Route path="/branch-menu" element={<BranchPageMenu />} />
+        <Route path="/aboutus" element={<AboutUsPage />} />
       </Routes>
     </Layout>
   );

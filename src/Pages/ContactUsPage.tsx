@@ -25,7 +25,7 @@ function ContactUsPage() {
       <div className=" w-full h-44 md:h-72 relative">
         <img src={banner} alt="بنر" className=" w-full h-full object-fill" />
         <h1 className=" text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold lg:text-[40px]">
-          درباره ترخینه بیشتر بدانید!
+          با ترخینه در تماس باشید.
         </h1>
       </div>
       <section className="w-full grid gap-3 px-5 py-3  mt-4">

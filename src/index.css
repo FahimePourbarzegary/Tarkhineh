@@ -141,6 +141,49 @@
 
     border: 2px solid #e5f2e9;
   }
+  .green .rmdp-week-day {
+    color: #717171;
+  }
+
+  .green .rmdp-day:not(.rmdp-day-hidden) span:hover {
+    --rmdp-hover-green: #b0d7bd;
+    background-color: var(--rmdp-hover-green) !important;
+  }
+  .green .rmdp-header-values {
+    color: #353535;
+    font-size: 16px;
+
+    font-weight: 700;
+  }
+  .green .rmdp-day {
+    font-size: 16px;
+    font-weight: 500;
+    color: #353535;
+  }
+  .green .rmdp-day.rmdp-deactive {
+    --rmdp-secondary-green: #adadad;
+    color: var(--rmdp-secondary-green) !important;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fffefe;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffff;
+  }
 }
 @font-face {
   font-family: "Estedad-Regular";

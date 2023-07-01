@@ -3,6 +3,7 @@ import tewitterLogo from "../../assets/tewitter.svg";
 import instagramLogo from "../../assets/instagram.svg";
 import telegramLogo from "../../assets/telegram.svg";
 import InputFooter from "./InputFooter";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className={` bg-black h-48 w-full relative md:h-80 `}>
@@ -22,19 +23,19 @@ function Footer() {
           {/* links */}
           <ul className=" [&>*]:text-[10px] [&>*]:font-normal flex flex-col items-start gap-2 md:gap-4 pr-3 md:[&>*]:font-medium md:[&>*]:text-sm ">
             <li>
-              <a href="#" className="hover:text-gray-5 duration-500">
+              <Link to={"/FAQ"} className="hover:text-gray-5 duration-500">
                 پرسش های متداول
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-5 duration-500">
+              <Link to={"/rules"} className="hover:text-gray-5 duration-500">
                 قوانین ترخینه
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-5 duration-500">
+              <Link to={"/privacy"} className="hover:text-gray-5 duration-500">
                 حریم خصوصی
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className=" flex justify-center items-center gap-2">

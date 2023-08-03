@@ -3,7 +3,7 @@ import notFoundimage from "../assets/searchnotfound.svg";
 import InputSearch from "../Components/InputSearch/InputSearch";
 import ProductCard from "../Components/ProductCard/ProductCard";
 function SearchPage() {
-  const [filteredSearch, setFilteredSearch] = useState([{},{}]);
+  const [filteredSearch] = useState([{},{}]);
   return (
     <section className="flex flex-col justify-center items-center my-12">
       {filteredSearch.length ? (
@@ -16,7 +16,7 @@ function SearchPage() {
           <InputSearch ExtraCssDiv="w-[300px] rounded-lg md:w-[395px]" />
           {/* Search Card */}
           <div className=" grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 ">
-           {filteredSearch.map((serachData=>{
+           {filteredSearch.map((()=>{
             return <ProductCard/>
            }))}
        

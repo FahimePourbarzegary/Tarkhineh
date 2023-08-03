@@ -7,6 +7,9 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/swiper-bundle.min.css";
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
+import slider1 from "../../assets/banner/slider.png";
+import slider2 from "../../assets/banner/slider2.jpg";
+import slider3 from "../../assets/banner/slider3.jpg";
 function Slider() {
   return (
     <div className="relative">
@@ -53,7 +56,7 @@ function Slider() {
             </div>
             <img
               className="w-full h-48 md:h-96 object-cover opacity-40 hover:opacity-70"
-              src="https://s3-alpha-sig.figma.com/img/4096/bdda/3ac5f5bbde488604f0899328c14c3049?Expires=1684713600&Signature=LtWx-2nAaAwYDZvNh3JaO-PA32xcwmrq8PLIeRM1FfvTd0TGr7APizMTjwnLkjfxhQ31ZpPgsKfNONYlLacF6OqMo061KaSOqk0ZEKa1o1dj9YhYBdx~19XS57tvOtOPdmyhwZT-8j0puFnFSmu1P9SINxqO--jcyKH6iZq13f6h3BHKhP-Ov3LmQ1xBZtXDnLbGfkI93ISpVHHhgoVUwiZ26iqEvKI71oXpu0dBwT5hwOCJ6mSLgRjPEjSoj9GMKypoh73kl12pmi6iCkL6pq~a814X4WBOow3moPJKvFJv6U9KceBIIBJ2FOt6-KdjdZDAGQuxeoBxrp94WdW-AQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+              src={slider1}
               alt=""
             />
           </div>
@@ -74,7 +77,7 @@ function Slider() {
             </div>
             <img
               className="w-full h-48 md:h-96 object-cover opacity-40 hover:opacity-70"
-              src="https://s3-alpha-sig.figma.com/img/ef1c/4426/3e34fc7f040f53876172113bfe24c7ff?Expires=1684713600&Signature=TmP~dk~bkB4g0F4MdKkWppUKij6-KO5NeiHHJ41NW3CKht0gEw~MnIKLXFbFQXZ~pyYx-2vvffnLuQdJHJeMAR5Skm48xnlJgFhMvTB8QeQTJcGo3UjF-m6fZ2B-tVZoeIl2lQ-6APFrgqH9iJWho3GAADhD~IEoKvUbayNWvDZHoZe2o4rzuNDtMkD4231xvxkGXQAGN-pCbbVgnZx4uttRMZ42xNG2xT9-p-jte~FaP8nJzJ-x6CIwmLVtar~IOCFO-5jwDcCcbKNi7tE97U7hwIzjz978n~0fFsB~4MIKMKaDFBKVk6kCJmgF7Uk-TfiGAGXrwwl8zGkudu6k2g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+              src={slider2}
               alt=""
             />
           </div>
@@ -95,7 +98,7 @@ function Slider() {
             </div>
             <img
               className="w-full h-48 md:h-96 object-cover opacity-40 hover:opacity-70"
-              src="https://s3-alpha-sig.figma.com/img/e373/a5bb/739135ae71a692fcff8ef5bd2e9bc39e?Expires=1684713600&Signature=KlflOJtfE-h8heOXuFwxhDkyHMcTfWNvYyq8qusd9GZSXASo7Or4l1sbBgU92DAq0v45pDTqMvRSaqi4wHSeKHVAgqHj8qlQ0j96gXlFdOTFPGdcho~XEcmNMY2~N2335b8jsR1K6N3W5wSKdiGWBZxoPJXutRGly0HiK52~heOVH90Ac4Hb-09sP6G9HFt2zQM7tG43qdYLWtL8-kgamsBUczlbH3q96jWirKZC57hur6Uob5yki5KKsFBiSgRFXxXcsOmq1vwczqCIfIH3wWZ1AI7hzmklh~LCmHzVsJoDZlr2YnK9G4VdGfaqS9Q2uxwhlKZl0Y6U7kUPlYDBaA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+              src={slider3}
               alt=""
             />
           </div>

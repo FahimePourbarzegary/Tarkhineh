@@ -147,7 +147,7 @@ function Franchise() {
                 placeholder="شماره تماس"
                 className={`${inputStyle}`}
               />
-              <MultiDatePicker />
+              <MultiDatePicker disable={false} ExtraClass="px-2 lg:px-4 py-3" />
             </div>
             <div>
               <Button type="submit" ExtraClass=" py-2 px-4">
@@ -233,6 +233,7 @@ function Franchise() {
                       }}
                       value="Area"
                       style="top-28"
+
                     />
                   }
                 </div>

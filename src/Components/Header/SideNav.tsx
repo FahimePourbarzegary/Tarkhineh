@@ -34,7 +34,7 @@ function SideNav({ isToggle, setIsToggle }: SideNavProps) {
     <div
       className={`${
         isToggle ? "w-3/4 " : "w-0 [&>*]:hidden"
-      } duration-500  ease-linear h-screen bg-white z-20  top-0 right-0 fixed  overflow-y-auto`}
+      } duration-500  ease-linear h-screen bg-white z-40  top-0 right-0 fixed  overflow-y-auto`}
     >
       {/* Head */}
       <div className=" bg-gray-8 relative ">

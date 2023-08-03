@@ -4,10 +4,18 @@ import persian_fa from "react-date-object/locales/persian_fa";
 import "react-multi-date-picker/styles/colors/green.css";
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
 const weekDays = ["ش", "ی", "د", "س", "چ", "پ", "ج"];
-function MultiDatePicker() {
+function MultiDatePicker({
+  placeholder,
+  disable,
+  ExtraClass=""
+}: {
+  placeholder?: string;
+  disable: boolean;
+  ExtraClass?:string;
+}) {
   return (
     <DatePicker
-      render={<CustomInput />}
+      render={<CustomInput placeholder={placeholder} disable={disable} ExtraClass={ExtraClass} />}
       weekDays={weekDays}
       arrow={false}
       monthYearSeparator=" "
@@ -16,6 +24,8 @@ function MultiDatePicker() {
       className="green"
       calendarPosition="bottom-center"
       showOtherDays
+      scrollSensitive={false}
+      disabled={disable}
       mapDays={({
         date,
         today,
@@ -82,18 +92,25 @@ function CustomInput({
   onFocus,
   value,
   onChange,
+  placeholder = "زمان ایده آل",
+  disable,
+  ExtraClass="",
 }: {
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
   value?: string | number | readonly string[] | undefined;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  placeholder?: string;
+  disable: boolean;
+  ExtraClass?:string;
 }) {
   return (
     <input
       onFocus={onFocus}
       value={value}
       onChange={onChange}
-      placeholder="زمان ایده آل"
-      className={`px-2 lg:px-4 py-3 focus:outline-primaryGreen border border-gray-4 rounded w-full `}
+      placeholder={placeholder}
+      disabled={disable}
+      className={`w-full focus:outline-primaryGreen border border-gray-4 rounded bg-white ${ExtraClass}`}
     />
   );
 }

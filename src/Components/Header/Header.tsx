@@ -76,7 +76,7 @@ function Header() {
       <div
         className={` fixed top-0 right-0 h-screen  ${
           isToggle ? "w-full" : "w-0"
-        } duration-500 transition-all bg-black/40 backdrop-blur-sm z-20  `}
+        } duration-500 transition-all bg-black/40 backdrop-blur-sm z-40  `}
         onClick={() => navbarToggle()}
       ></div>
       {/* section sidebar mobile */}

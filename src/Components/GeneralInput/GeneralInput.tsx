@@ -58,6 +58,7 @@ function GeneralInput({
           placeholder={placeHolderHandler}
           onChange={onChange}
           onClick={onClick}
+          value={value}
           className=" px-2 lg:px-4 py-3 focus:outline-primaryGreen border border-gray-4 rounded w-full"
         />
       )}

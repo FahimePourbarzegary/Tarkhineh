@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import spiderwebimg from "../../assets/spiderweb.svg";
 import Button from "../Button/Button";
 import { ArrowRight2, CloseCircle, Edit, Edit2, Trash } from "iconsax-react";
@@ -30,11 +30,10 @@ function Address() {
   const [popUpAddress, setPopUpAddress] = useState(false);
   const [popUpAddressSubmit, setPopUpAddressSubmit] = useState(false);
   const [addresses, setAddresses] = useState<addressType[]>([]);
+  const [isEdit, setIsEdit] = useState(-1);
   const trashHandler = (id: number) => {
     const filteredAddress = addresses.filter((address) => address.id !== id);
-    console.log(addresses);
     setAddresses(filteredAddress);
-    console.log(addresses);
   };
   return (
     <>
@@ -56,7 +55,10 @@ function Address() {
           <div className="w-full grid md:grid-cols-2 gap-3 mdd:gap-4 mt-4 ">
             {addresses.map((address) => {
               return (
-                <div className=" bg-gray-1 border border-gray-4 rounded-lg p-4 flex flex-col gap-2 justify-between  text-gray-8">
+                <div
+                  key={address.id}
+                  className=" bg-gray-1 border border-gray-4 rounded-lg p-4 flex flex-col gap-2 justify-between  text-gray-8"
+                >
                   <div className=" flex justify-between items-center gap-1">
                     <div
                       className={` text-start text-[10px] md:text-sm  ${
@@ -69,10 +71,16 @@ function Address() {
                     </div>
                     <div className=" flex gap-3">
                       <Trash
-                        className=" w-4 h-4 md:w-6 md:h-6"
+                        className=" w-4 h-4 md:w-6 md:h-6 cursor-pointer"
                         onClick={() => trashHandler(address.id)}
                       />
-                      <Edit2 className=" w-4 h-4 md:w-6 md:h-6" />
+                      <Edit2
+                        className=" w-4 h-4 md:w-6 md:h-6 cursor-pointer"
+                        onClick={() => {
+                          setIsEdit(address.id);
+                          setPopUpAddress(true);
+                        }}
+                      />
                     </div>
                   </div>
                   <div className=" flex justify-between items-center w-full text-gray-7 text-[10px] md:text-sm">
@@ -125,6 +133,8 @@ function Address() {
           addresses={addresses}
           setAddresses={setAddresses}
           setPopUpAddress={setPopUpAddress}
+          isEdit={isEdit}
+          setIsEdit={setIsEdit}
         />
       )}
     </>
@@ -205,13 +215,15 @@ const AddressSubmit = ({
   addresses,
   setAddresses,
   setPopUpAddress,
-  isEdit = false,
+  isEdit,
+  setIsEdit,
 }: {
   addresses: addressType[];
   setPopUpAddressSubmit: (value: boolean) => void;
   setAddresses: (value: addressType[]) => void;
   setPopUpAddress: (value: boolean) => void;
-  isEdit?: boolean;
+  isEdit;
+  setIsEdit: (value: number) => void;
 }) => {
   const [address, setAddress] = useState<addressType>({
     id: new Date().getTime(),
@@ -221,6 +233,15 @@ const AddressSubmit = ({
     nameFamily: "",
     reciver: false,
   });
+
+  useEffect(() => {
+    if (isEdit !== -1) {
+      const filteredAddressEdit = addresses.filter(
+        (address) => address.id === isEdit
+      );
+      if (filteredAddressEdit.length !== 0) setAddress(filteredAddressEdit[0]);
+    }
+  }, [addresses, isEdit]);
   const onChangeHandlerCheckBox = () => {
     setAddress({ ...address, reciver: !address.reciver });
   };
@@ -228,9 +249,21 @@ const AddressSubmit = ({
     const { name, value } = e.target;
     setAddress({ ...address, [name]: value });
   };
-  const addAdress = () => {
-    setAddresses([...addresses, address]);
-    setPopUpAddressSubmit(false);
+  const SubmitAdressHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isEdit === -1) {
+      setAddresses([...addresses, address]);
+      setPopUpAddressSubmit(false);
+      console.log(addresses);
+    } else {
+      const filteredAddressEdit = addresses.filter(
+        (address) => address.id !== isEdit
+      );
+      console.log(filteredAddressEdit);
+      setAddresses([...filteredAddressEdit, address]);
+      setIsEdit(-1);
+      setPopUpAddressSubmit(false);
+    }
   };
   return (
     <div className=" flex justify-center items-start absolute md:fixed top-0 right-0 w-full h-screen bg-white md:bg-transparent z-30  ">
@@ -279,7 +312,12 @@ const AddressSubmit = ({
                 <Edit size={16} color="white" />
               </div>
             </div>
-            <form className=" p-6 flex flex-col gap-4" onSubmit={addAdress}>
+            <form
+              className=" p-6 flex flex-col gap-4"
+              onSubmit={(e: React.FormEvent<HTMLFormElement>) =>
+                SubmitAdressHandler(e)
+              }
+            >
               <GeneralInput
                 tag={`input`}
                 name="addressTitle"
@@ -319,7 +357,6 @@ const AddressSubmit = ({
                   <GeneralInput
                     tag={`textarea`}
                     name="address"
-                    type="text"
                     placeHolder="آدرس دقیق گیرنده"
                     value={address.address}
                     onChange={(e) => handleOnChange(e)}
@@ -338,7 +375,6 @@ const AddressSubmit = ({
                   <GeneralInput
                     tag={`textarea`}
                     name="address"
-                    type="text"
                     placeHolder="آدرس دقیق"
                     value={address.address}
                     onChange={(e) => handleOnChange(e)}

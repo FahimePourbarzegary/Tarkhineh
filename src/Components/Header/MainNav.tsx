@@ -73,7 +73,7 @@ function MainNav() {
                         isOpen[data.id - 2].status
                           ? "w-36"
                           : "w-0 opacity-0 hidden"
-                      } rounded-md shadow  bg-white z-30 `}
+                      } rounded-md shadow  bg-white z-50 `}
                       onMouseLeave={() => openSubMenu(data.id)}
                     >
                       {data.subNav.map((sub, index) => {

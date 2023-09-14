@@ -1,10 +1,18 @@
-import { NavLink, Route, Routes } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, Route, Routes, useNavigate } from "react-router-dom";
 import image from "../assets/user.svg";
 import { Heart, Location, LogoutCurve, User, Wallet2 } from "iconsax-react";
 import Profile from "../Components/Dashboard/Profile";
 import FavoritesPage from "../Components/Dashboard/FavoritesPage";
 import Address from "../Components/Dashboard/Address";
+import CardPopUpBox from "../Components/CardPopUpBox/CardPopUpBox";
 function DashboardPage() {
+  const [isLogout, setIsLogout] = useState<number | null>(null);
+  const navigate = useNavigate();
+  const LogoutHandler = () => {
+    setIsLogout(null);
+    navigate("/");
+  };
   const settingUserData = [
     {
       id: 1,
@@ -50,17 +58,6 @@ function DashboardPage() {
       ),
       route: "address",
     },
-    {
-      id: 5,
-      title: "خروج",
-      icon: (isActive) => (
-        <LogoutCurve
-          className={` w-4 h-4 md:w-5 md:h-5`}
-          variant={`${isActive ? "Bold" : "Outline"}`}
-        />
-      ),
-      route: "/",
-    },
   ];
   return (
     <section className=" relative flex items-start  gap-8 w-full h-screen md:px-10 lg:px-24 lg:py-4">
@@ -99,7 +96,25 @@ function DashboardPage() {
               </li>
             );
           })}
+          <li
+            className="flex  items-center justify-start px-[6px] py-3 gap-1 hover:bg-tint-1 rounded-sm duration-200 "
+            onClick={() => {
+              setIsLogout(1);
+            }}
+          >
+            <LogoutCurve className={` w-4 h-4 md:w-5 md:h-5`} />
+            <span className=" text-sm md:text-base">خروج</span>
+          </li>
         </ul>
+        {isLogout && (
+          <CardPopUpBox
+            title="خروج"
+            description="آیا میخواهید از حساب خود خارج شوید؟"
+            buttonTitle="خروج"
+            action={() => LogoutHandler()}
+            setIsCloseCard={setIsLogout}
+          />
+        )}
       </div>
 
       <Routes>

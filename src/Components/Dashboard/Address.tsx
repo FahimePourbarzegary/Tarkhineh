@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 import { ArrowRight2, CloseCircle, Edit, Edit2, Trash } from "iconsax-react";
 import GoogleMapReact from "google-map-react";
 import GeneralInput from "../GeneralInput/GeneralInput";
+import CardPopUpBox from "../CardPopUpBox/CardPopUpBox";
 const AnyReactComponent = ({
   text,
 }: {
@@ -31,6 +32,8 @@ function Address() {
   const [popUpAddressSubmit, setPopUpAddressSubmit] = useState(false);
   const [addresses, setAddresses] = useState<addressType[]>([]);
   const [isEdit, setIsEdit] = useState(-1);
+  const [isTrashCard, setIsTrashCard] = useState<number | null>(null);
+  // const [isDeleteAddress, setIsDeleteAddress] = useState(false);
   const trashHandler = (id: number) => {
     const filteredAddress = addresses.filter((address) => address.id !== id);
     setAddresses(filteredAddress);
@@ -72,7 +75,7 @@ function Address() {
                     <div className=" flex gap-3">
                       <Trash
                         className=" w-4 h-4 md:w-6 md:h-6 cursor-pointer"
-                        onClick={() => trashHandler(address.id)}
+                        onClick={() => setIsTrashCard(address.id)}
                       />
                       <Edit2
                         className=" w-4 h-4 md:w-6 md:h-6 cursor-pointer"
@@ -88,6 +91,15 @@ function Address() {
                     <p>{address.nameFamily}</p>
                     <p>{address.phoneNumber}</p>
                   </div>
+                  {isTrashCard === address.id && (
+                    <CardPopUpBox
+                      title="حذف  آدرس"
+                      description="آیا آدرس حذف شود؟"
+                      buttonTitle="حذف آدرس"
+                      action={() => trashHandler(address.id)}
+                      setIsCloseCard={setIsTrashCard}
+                    />
+                  )}
                 </div>
               );
             })}
